@@ -1,0 +1,6 @@
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\bin\Debug\DSAL1-KFS.exe.config
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\bin\Debug\DSAL1-KFS.exe
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\bin\Debug\DSAL1-KFS.pdb
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\obj\Debug\DSAL1-KFS.csprojResolveAssemblyReference.cache
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\obj\Debug\DSAL1-KFS.exe
+C:\Users\reape\Desktop\Algorithem and datastructure\DSAL1-KFS\DSAL1-KFS\DSAL1-KFS\obj\Debug\DSAL1-KFS.pdb
