@@ -12,6 +12,7 @@ namespace DSAL1_KFS
         {
             MainBirthdayProblem();
             MainCouponCollectorProblem();
+            //MainDeckSort();
             Console.ReadKey();
         }
 
@@ -41,6 +42,11 @@ namespace DSAL1_KFS
             }
             Console.WriteLine("the average was {0} with the N value being {1}", sequence.Average(), N);
             Console.ReadKey();
+        }
+
+        static void MainDeckSort()
+        {
+            DeckSort deckSort = new DeckSort();
         }
     }
 }

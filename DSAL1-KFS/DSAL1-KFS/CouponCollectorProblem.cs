@@ -42,11 +42,17 @@ namespace DSAL1_KFS
             int[] sequences = new int[N];
             for (int i = 0; i < N; i++)
             {
+                sequences[i] = 0;
+
+            }
+            for (int i = 0; i < N; i++)
+            {
                 attempts++;
                 int temp = new Random().Next(0, N);
                 if (!CompareDate(temp, sequences))
                 {
-                    sequences[i] = temp;
+
+                    sequences[i] = 1;
                 }
                 else
                 {
@@ -60,13 +66,17 @@ namespace DSAL1_KFS
         //this compared the current number N with all numbers in the current array, if a double has been found it returns true, otherwise false.
         bool CompareDate(int N, int[] sequence)
         {
-            for (int i = 0; i < sequence.Length-1; i++)
+            if (sequence[N] == 1)
             {
-                if (N == sequence[i])
-                {
-                    return true;
-                }
+                return true;
             }
+            //for (int i = 0; i < sequence.Length-1; i++)
+            //{
+            //    if (N == sequence[i])
+            //    {
+            //        return true;
+            //    }
+            //}
             return false;
         }
     }
