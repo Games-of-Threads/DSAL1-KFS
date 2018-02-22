@@ -10,74 +10,48 @@ namespace DSAL1_KFS
     {
         public CouponCollectorProblem(int N)
         {
-            //variable for counting amount of attempts
-            int attempts = 0;
-            //generating the array to contain all values, they should presently be null
-            int[] sequences = new int[N];
-            //begining loop
-            for (int i = 0; i < N; i++)
-            {
-                //adding +1 per attempt in the beginning of the attempt
-                attempts++;
-                //making new random value.
-                int temp = new Random().Next(0, N);
-                //checks if the value exist in the array and if it isn't it ensures the for loop doesn't prematuraly stops.
-                if (!CompareDate(temp, sequences))
-                {
-                    sequences[i] = temp;
-                }
-                else
-                {
-                    i--;
-                }
-                //Console.WriteLine("attempts:{0}\ncurrentsize:{1}", attempts, i);
-            }
-            Console.WriteLine("it took {0} attempts to write all values",attempts);
+            Console.WriteLine("expected value is {0}", expected(N));
         }
 
-        //note this is a copy of the main function with the difference for multiple uses.
-        public int CouponCollectorProblemInt(int N)
+        public int CouponCollectorProblemInt(int N,Random rnd)
         {
-            int attempts = 0;
-            int[] sequences = new int[N];
-            for (int i = 0; i < N; i++)
-            {
-                sequences[i] = 0;
+            List<int> sequence = new List<int>();
 
-            }
-            for (int i = 0; i < N; i++)
+            int attempts = 0;
+            int remaining = N;
+
+            while (true)
             {
                 attempts++;
-                int temp = new Random().Next(0, N);
-                if (!CompareDate(temp, sequences))
+                int temp = rnd.Next(0, N);
+                if (!CompareDate(temp,sequence))
                 {
+                    sequence.Add(temp);
+                    remaining--;
+                }
 
-                    sequences[i] = 1;
-                }
-                else
+                if (remaining <= 0)
                 {
-                    i--;
+                    break;
                 }
-                //Console.WriteLine("attempts:{0}\ncurrentsize:{1}",attempts,i);
             }
             return attempts;
         }
 
-        //this compared the current number N with all numbers in the current array, if a double has been found it returns true, otherwise false.
-        bool CompareDate(int N, int[] sequence)
+        bool CompareDate(int N, List<int> sequence)
         {
-            if (sequence[N] == 1)
+            return sequence.Contains(N);
+        }
+
+        public double expected(int N)
+        {
+            float h = 0.0f;
+            for (int i = 1; i <= N; i++)
             {
-                return true;
+                h += 1 / (float)i;
             }
-            //for (int i = 0; i < sequence.Length-1; i++)
-            //{
-            //    if (N == sequence[i])
-            //    {
-            //        return true;
-            //    }
-            //}
-            return false;
+
+            return N * h;
         }
     }
 }

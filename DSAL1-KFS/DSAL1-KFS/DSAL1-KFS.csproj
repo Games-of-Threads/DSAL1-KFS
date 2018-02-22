@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BirthdayProblem.cs" />
-    <Compile Include="Card.cs" />
     <Compile Include="CouponCollectorProblem.cs" />
     <Compile Include="DeckSort.cs" />
     <Compile Include="Program.cs" />
